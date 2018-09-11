@@ -13,3 +13,21 @@ _.chunk = (arr,num)=>{
    }
    return newArr;
 }
+
+_.compact = (arr)=>{
+    return arr.filter((item)=>{
+        return item;
+    });
+}
+
+_.concat = (...args)=>{
+    const arr = args.reduce((pre,cur)=>{
+        if(Array.isArray(cur)){
+            pre = pre.concat(cur);
+        }else{
+            pre.push(cur);
+        }
+        return pre;
+    },[]);
+    return arr;
+}
